@@ -50,7 +50,7 @@ Two annotators are evaluating the summaries of `model A` and `model B` on five d
 -  **Expected Agreement by chance ($p_e$):** Calculated using the probability that both annotators assign the same label.
    -  Proportion for A: Annotater 1: 3/5, Annotater 2: 3/5
    -  Proportion for B: Annotater 1: 2/5, Annotater 2: 2/5
-   -  $p_e = \frac{3}{5}*\frac{3}{5} + \frac{2}{5}*\frac{2}{5} = 0.52$
+   -  $p_e = {\frac{3}{5}}*{\frac{3}{5}} + {\frac{2}{5}}*{\frac{2}{5}} = 0.52$
 -  Kappa:
    -  $k = \frac{0.6 - 0.52}{1 - 0.52} = 0.17$
   
