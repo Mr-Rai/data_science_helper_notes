@@ -23,7 +23,7 @@ Pick ONE or MORE options:
 
 ### Kohen's Kappa
 
-<font size="5">$k = \frac{p_o - p_e}{1 - p_e}$</font>
+$k = \frac{p_o - p_e}{1 - p_e}$
 
 **where:**
 - $p_o$: Observed agreement. It is the proportion of times both raters agree, found by dividing the number of
@@ -37,3 +37,35 @@ agreements by the total number of items.
 | > 0.4 | moderate       |
 | > 0.2 | slight         |
 | < 0   | poor           |
+
+**Example:**<br>
+Two annotators are evaluating the summaries of `model A` and `model B` on five different texts and decide which one is better. What is the cohen's Kappa?
+
+| Text          | 1 | 2 | 3 | 4 | 5 |
+|---------------|---|---|---|---|---|
+| Annotator 1   | A | B | B | A | A |
+| Annotator 2   | A | A | B | A | B |
+
+- **Observed Agreement ($p_0$):**  Out of total 5, annotators agreed on 3 texts i.e. 1, 3, 4 so $p_0$ = 3/5 = 0.6
+-  **Expected Agreement by chance ($p_e$):** Calculated using the probability that both annotators assign the same label.
+   -  Proportion for A: Annotater 1: 3/5, Annotater 2: 3/5
+   -  Proportion for B: Annotater 1: 2/5, Annotater 2: 2/5
+   -  $p_e = \frac{3}{5}*\frac{3}{5} + \frac{2}{5}*\frac{2}{5} = 0.52$
+-  Kappa:
+   -  $k = \frac{0.6 - 0.52}{1 - 0.52} = 0.17$
+  
+-----------------------------
+
+## Topic 2: Confusion Metrics
+A confusion matrix is a table that summarizes classification results. It visually displays how many predictions were correct and how many were incorrect for each class in a dataset.
+
+1. **Binary Confusion Matrix**
+   - Example - Email filter classifies messages as spam or not spam
+2. **MultiClass Confusion Matrix**
+   - Example - For models predicting three or more classes (e.g., Cat, Dog, Horse)
+
+### Key Metrics
+1. Accuracy = $\frac{TP + TN}{TP + TN + FP + FN}$
+2. Precision = $\frac{TP}{TP + FP}$
+3. Recall (Senstivity) = $\frac{TP}{TP + FN}$
+4. F1 Score: Harmonic mean of Precision and Recall
